@@ -17,20 +17,20 @@ class Board
 		@board = []
 		size.times do
 			row = []
-      size.times do
-        row << "E"
-      end
-      @board << row
+			size.times do
+				row << "E"
+			end
+			@board << row
 		end
 	end
 
 	def update_marker(sign, place)
 		if board.count-1 >= place[0] && board[place[0]].count-1 >= place[1]
-		  if @board[place[0]][place[1]] == "E"
-		    @board[place[0]][place[1]] = sign
-		  else
-			  "already taken"
-		  end
+			if @board[place[0]][place[1]] == "E"
+				@board[place[0]][place[1]] = sign
+			else
+				"already taken"
+			end
 		else
 			"not on board"
 		end
